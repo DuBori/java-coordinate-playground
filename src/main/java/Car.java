@@ -1,13 +1,19 @@
 public abstract class Car {
-    abstract double getDistancePerLiter();
+    public int distance;
+    public String name;
+    public double perLiter;
 
-    abstract int addFuel();
+    public Car(int distance) {
+        this.distance = distance;
+    }
+
+    abstract double getDistancePerLiter();
 
     abstract int getTripDistance();
 
-    abstract String inputCarName();
+    abstract String getName();
 
-    double getChargeQuantity() {
+     double getChargeQuantity() {
         return getTripDistance() / getDistancePerLiter();
     }
 }
