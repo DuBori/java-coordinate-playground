@@ -1,26 +1,20 @@
-## [NEXTSTEP 플레이그라운드의 미션 진행 과정](https://github.com/next-step/nextstep-docs/blob/master/playground/README.md)
+<좌표 계산기 - 상속,인터페이스>
+기능 요구사항
+1. 사용자가 점에 대한 좌표 정보를 입력하는 메뉴를 구성한다.
+2. 좌표 정보는 괄호(",")로 둘러쌓여 있고, 쉼표(,)로 x,y를 구분한다.
+3. x,y 좌표 모두 최대 24까지만 입력할 수 있다.
+4. 입력 범위를 초과할 경우 에러 문구를 출력하고 다시 입력 받는다.
+5. 정상적인 좌표값을 입력한 경우, 해당 좌표에 특수문자를 표시한다.
+6. 좌표값 두개 입력한 경우, 두점을 있는 직선으로 가정하고 각 좌표값 사이는 '-'문자로 구분한다.
+7. 직선인 경우는 두 점 사이 거리를 계산해서 출력한다.
 
----
-## 학습 효과를 높이기 위해 추천하는 미션 진행 방법
-
----
-1. 피드백 강의 전까지 미션 진행 
-> 피드백 강의 전까지 혼자 힘으로 미션 진행. 미션을 진행하면서 하나의 작업이 끝날 때 마다 add, commit
-> 예를 들어 다음 숫자 야구 게임의 경우 0, 1, 2단계까지 구현을 완료한 후 push
-
-![mission baseball](https://raw.githubusercontent.com/next-step/nextstep-docs/master/playground/images/mission_baseball.png)
-
----
-2. 피드백 앞 단계까지 미션 구현을 완료한 후 피드백 강의를 학습한다.
-
----
-3. Git 브랜치를 master 또는 main으로 변경한 후 피드백을 반영하기 위한 새로운 브랜치를 생성한 후 처음부터 다시 미션 구현을 도전한다.
-
-```
-git branch -a // 모든 로컬 브랜치 확인
-git checkout master // 기본 브랜치가 master인 경우
-git checkout main // 기본 브랜치가 main인 경우
-
-git checkout -b 브랜치이름
-ex) git checkout -b apply-feedback
-```
+프로그래밍 요구사항
+1. 자바 코드 컨벤션을 지키며 프로그래밍한다. 단, 들여쓰기는 4spaces로 한다.
+2. 들여쓰기는 1depth만 허용한다. (while문안에 if가 있으면 2depth)
+3. 3항 연산자를 사용하지 않는다.
+4. else 예약어를 사용하지않는다.
+5. 모든 기능은 TDD로 구현해 단위테스트가 존재해야한다. UI System.out 로직 제외
+6. 함수 길이가 10라인 넘지않게한다.
+7. 모든 원시값과 문자열을 포장한다.
+8. 일급 컬렉션을 쓴다.
+9. 줄여 쓰지 않는다.
