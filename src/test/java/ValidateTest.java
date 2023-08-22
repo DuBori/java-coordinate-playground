@@ -14,7 +14,7 @@ class ValidateTest {
 
     @Test
     void 입력값체크() {
-        assertTrue(Validate.check(input));
+        assertEquals(Validate.check(input), CalType.LINE);
     }
 
 }
