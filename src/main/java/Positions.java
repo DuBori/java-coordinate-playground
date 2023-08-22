@@ -32,6 +32,6 @@ public class Positions {
     }
 
     public double result() {
-        return Math.pow(Math.sqrt(positions.get(0).getX() - positions.get(1).getX()),2) + Math.pow(positions.get(0).getY() - positions.get(1).getY(),2);
+        return Math.sqrt(Math.pow(positions.get(0).getX() - positions.get(1).getX(),2) + Math.pow(positions.get(0).getY() - positions.get(1).getY(), 2));
     }
 }
