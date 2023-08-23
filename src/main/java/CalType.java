@@ -1,5 +1,5 @@
 public enum CalType {
-    LINE(5), 사각형(9), 삼각형(7), ERROR(0);
+    LINE(2), 사각형(4), 삼각형(3), ERROR(0);
 
     private int count;
 
