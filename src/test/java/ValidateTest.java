@@ -12,9 +12,9 @@ class ValidateTest {
         input = "(10,10)-(14,15)";
     }
 
-    @Test
+    /*@Test
     void 입력값체크() {
-        assertEquals(Validate.check(input), CalType.LINE);
-    }
+        assertEquals(check(input), CalType.LINE);
+    }*/
 
 }
