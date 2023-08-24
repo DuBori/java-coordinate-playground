@@ -34,6 +34,18 @@ public class Positions {
         return list;
     }
 
+    private Matcher getMatcher(String input, CalType type) {
+        Matcher matcher = null;
+        if (type == CalType.LINE) {
+            return PATTERN_LINE.matcher(input);
+        }
+        if (type == CalType.사각형) {
+            return PATTERN_SQUARE.matcher(input);
+        }
+
+        return PATTERN_삼각형.matcher(input);
+    }
+
     private CalType check(String input) {
         if (PATTERN_LINE.matcher(input).matches()) {
             return CalType.LINE;
@@ -47,18 +59,6 @@ public class Positions {
         throw new IllegalArgumentException("입력값 패턴이 잘못되었습니다.");
     }
 
-    private Matcher getMatcher(String input, CalType type) {
-        Matcher matcher = null;
-        if (type == CalType.LINE) {
-            return PATTERN_LINE.matcher(input);
-        }
-        if (type == CalType.사각형) {
-            return PATTERN_SQUARE.matcher(input);
-        }
-
-        return PATTERN_삼각형.matcher(input);
-    }
-
     public double result() {
         if (positions.size() == 2) {
             return getSqrt(0, 0);
@@ -67,15 +67,19 @@ public class Positions {
             return getSqrt(0, 0) * getSqrt(1, 0);
         }
         //헤론 공식
-        double s = (getSqrt(0, 0) + getSqrt(1, 0) + getSqrt(2, 1)) / 2;
-        return Math.sqrt(s * (s - getSqrt(0, 0)) * (s - getSqrt(1, 0)) * (s - getSqrt(2, 1)));
+        return getHeaRon();
     }
 
     private double getSqrt(int number, int reverse) {
         if (reverse > 0) {
-            return Math.sqrt(Math.pow(positions.get(number).getX() - positions.get(number - 2).getX(), 2) + Math.pow(positions.get(number).getY() - positions.get(number -2).getY(), 2));
+            return Math.sqrt(Math.pow(positions.get(number).getX() - positions.get(number - 2).getX(), 2) + Math.pow(positions.get(number).getY() - positions.get(number - 2).getY(), 2));
         }
         return Math.sqrt(Math.pow(positions.get(number).getX() - positions.get(number + 1).getX(), 2) + Math.pow(positions.get(number).getY() - positions.get(number + 1).getY(), 2));
+    }
+
+    private double getHeaRon() {
+        double s = (getSqrt(0, 0) + getSqrt(1, 0) + getSqrt(2, 1)) / 2;
+        return Math.sqrt(s * (s - getSqrt(0, 0)) * (s - getSqrt(1, 0)) * (s - getSqrt(2, 1)));
     }
 
     @Override
